@@ -118,7 +118,16 @@ class TableViewController: UITableViewController {
         return true
     }
     */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let destinationController = segue.destination as! detailViewController
+                destinationController.gymImageName = gymImages[indexPath.row]
+            }
+        }
+    }
+    
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             gymNames.remove(at: indexPath.row)

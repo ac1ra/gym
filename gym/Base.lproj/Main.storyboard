@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,6 +79,7 @@
                                     <outlet property="nameLabel" destination="ikk-H7-aOH" id="ldh-vS-FRD"/>
                                     <outlet property="thumbnailImageView" destination="Z8u-JY-CWh" id="csT-SG-T6Z"/>
                                     <outlet property="typeLabel" destination="DLx-zh-4wX" id="iNm-vW-iGG"/>
+                                    <segue destination="QDB-FF-RIY" kind="show" identifier="showDetails" id="coJ-rx-0SR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -90,7 +92,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJ4-ey-tI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593" y="-44"/>
+            <point key="canvasLocation" x="369" y="-44"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="AQc-yg-J1B">
+            <objects>
+                <viewController id="QDB-FF-RIY" customClass="detailViewController" customModule="gym" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Ph-bK-Asw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oEN-ak-Krq">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WoT-Vn-IA7" firstAttribute="trailing" secondItem="oEN-ak-Krq" secondAttribute="trailing" id="1fL-vd-Gy3"/>
+                            <constraint firstItem="oEN-ak-Krq" firstAttribute="leading" secondItem="WoT-Vn-IA7" secondAttribute="leading" id="2cS-ax-jr8"/>
+                            <constraint firstItem="WoT-Vn-IA7" firstAttribute="bottom" secondItem="oEN-ak-Krq" secondAttribute="bottom" id="59v-vd-f4V"/>
+                            <constraint firstItem="oEN-ak-Krq" firstAttribute="top" secondItem="WoT-Vn-IA7" secondAttribute="top" id="m00-4O-nFP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WoT-Vn-IA7"/>
+                    </view>
+                    <connections>
+                        <outlet property="gymImageView" destination="oEN-ak-Krq" id="mti-2W-FZy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wez-jK-IJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="-44"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dAW-8f-dFO">

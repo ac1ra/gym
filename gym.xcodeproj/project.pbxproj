@@ -13,6 +13,7 @@
 		A4988466239255BF00CD57C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4988464239255BF00CD57C6 /* LaunchScreen.storyboard */; };
 		A498846E2392564900CD57C6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A498846D2392564900CD57C6 /* TableViewController.swift */; };
 		A49884702392AC6E00CD57C6 /* GymTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A498846F2392AC6E00CD57C6 /* GymTableViewCell.swift */; };
+		A4E0415523A02CCB0083FEAD /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E0415423A02CCB0083FEAD /* detailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A4988467239255BF00CD57C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A498846D2392564900CD57C6 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A498846F2392AC6E00CD57C6 /* GymTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTableViewCell.swift; sourceTree = "<group>"; };
+		A4E0415423A02CCB0083FEAD /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				A4988464239255BF00CD57C6 /* LaunchScreen.storyboard */,
 				A4988467239255BF00CD57C6 /* Info.plist */,
 				A498846F2392AC6E00CD57C6 /* GymTableViewCell.swift */,
+				A4E0415423A02CCB0083FEAD /* detailViewController.swift */,
 			);
 			path = gym;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				A498845C239255BE00CD57C6 /* AppDelegate.swift in Sources */,
 				A498846E2392564900CD57C6 /* TableViewController.swift in Sources */,
 				A49884702392AC6E00CD57C6 /* GymTableViewCell.swift in Sources */,
+				A4E0415523A02CCB0083FEAD /* detailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
