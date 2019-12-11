@@ -11,13 +11,18 @@ import UIKit
 class detailViewController: UIViewController {
 
     @IBOutlet var gymImageView: UIImageView!
+    @IBOutlet var gymNameLabel: UILabel!
     
     var gymImageName = ""
+    var gymName = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         gymImageView.image = UIImage(named: gymImageName)
+        
+        gymNameLabel.text = gymName
         // Do any additional setup after loading the view.
     }
 

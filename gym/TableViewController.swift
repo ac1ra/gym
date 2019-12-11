@@ -123,6 +123,7 @@ class TableViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow{
                 let destinationController = segue.destination as! detailViewController
                 destinationController.gymImageName = gymImages[indexPath.row]
+                destinationController.gymName = gymNames[indexPath.row]
             }
         }
     }
