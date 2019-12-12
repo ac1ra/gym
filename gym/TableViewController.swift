@@ -9,13 +9,30 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
-    var gymNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats And Deli", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
-    var gymImages = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats And Deli", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
-    var gymLocations = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
-    var gymTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
-    var gymVisited = Array(repeating: false, count: 21)
+    var gyms:[gym] = [
+        gym(name: "Cafe Deadend", type: "Coffee & Tea Shop", local: "Hong Kong", image: "Cafe Deadend", isVisited: false),
+        gym(name: "Homei", type: "Cafe", local: "Hong Kong", image: "Homei", isVisited: false),
+        gym(name: "Teakha", type: "Tea House", local: "Hong Kong", image: "Teakha", isVisited: false),
+        gym(name: "Cafe Loisl", type: "Austrian / Causual Drink", local: "Hong Kong", image: "Cafe Loisl", isVisited: false),
+        gym(name: "Petite Oyster", type: "French", local: "Hong Kong", image: "Petite Oyster", isVisited: false),
+        gym(name: "For Kee Restaurant", type: "Bakery", local: "Hong Kong", image: "For Kee Restaurant", isVisited: false),
+        gym(name: "Po's Atelier", type: "Bakery", local: "Hong Kong", image: "Po's Atelier", isVisited: false),
+        gym(name: "Bourke Street Bakery", type: "Chocolate", local: "Sydney", image: "Bourke Street Bakery", isVisited: false),
+        gym(name: "Haigh's Chocolate", type: "Cafe", local: "Sydney", image: "Haigh's Chocolate", isVisited: false),
+        gym(name: "Palomino Espresso", type: "American / Seafood", local: "Sydney", image: "Palomino Espresso", isVisited: false),
+        gym(name: "Upstate", type: "American", local: "New York", image: "Upstate", isVisited: false),
+        gym(name: "Traif", type: "American", local: "New York", image: "Traif", isVisited: false),
+        gym(name: "Graham Avenue Meats", type: "Breakfast & Brunch", local: "New York", image: "Graham Avenue Meats And Deli", isVisited: false),
+        gym(name: "Waffle & Wolf", type: "Coffee & Tea", local: "New York", image: "Waffle & Wolf", isVisited: false),
+        gym(name: "Five Leaves", type: "Coffee & Tea", local: "New York", image: "Five Leaves", isVisited: false),
+        gym(name: "Cafe Lore", type: "Latin American", local: "New York", image: "Cafe Lore", isVisited: false),
+        gym(name: "Confessional", type: "Spanish", local: "New York", image: "Confessional", isVisited: false),
+        gym(name: "Barrafina", type: "Spanish", local: "London", image: "Barrafina", isVisited: false),
+        gym(name: "Donostia", type: "Spanish", local: "London", image: "Donostia", isVisited: false),
+        gym(name: "Royal Oak", type: "British", local: "London", image: "Royal Oak", isVisited: false),
+        gym(name: "CASK Pub and Kitchen", type: "Thai", local: "London", image: "CASK Pub and Kitchen", isVisited: false)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +53,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return gymNames.count
+        return gyms.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,10 +61,10 @@ class TableViewController: UITableViewController {
 
         // Configure the cell...
 
-        cell.nameLabel?.text = gymNames[indexPath.row]
-        cell.thumbnailImageView?.image = UIImage(named: gymNames[indexPath.row])
-        cell.locationLabel?.text = gymLocations[indexPath.row]
-        cell.typeLabel?.text = gymTypes[indexPath.row]
+        cell.nameLabel?.text = gyms[indexPath.row].name
+        cell.thumbnailImageView?.image = UIImage(named: gyms[indexPath.row].image)
+        cell.locationLabel?.text = gyms[indexPath.row].local
+        cell.typeLabel?.text = gyms[indexPath.row].type
         
         return cell
     }
@@ -78,29 +95,16 @@ class TableViewController: UITableViewController {
             
             let cell = tableView.cellForRow(at: indexPath)
             
-            if self.gymVisited[indexPath.row] == true{
+            if self.gyms[indexPath.row].isVisited == true{
                 cell?.accessoryType = .checkmark
-            } else if self.gymVisited[indexPath.row] == false{
-                cell?.accessoryType = .none
             }
-
-            
-//            self.gymVisited[indexPath.row] = true
-
-//            switch self.gymVisited[indexPath.row] {
-//            case false:
-//                cell?.accessoryType = .none
-//            case true:
-//                cell?.accessoryType = .checkmark
-//            }
-            
         })
         let checkActionUndo = UIAlertAction(title: "Check Undo", style: .default, handler:{
             (action: UIAlertAction)->Void in
             
             let  cell = tableView.cellForRow(at: indexPath)
             cell?.accessoryType = .none
-            self.gymVisited[indexPath.row] = false
+            self.gyms[indexPath.row].isVisited = false
             
         })
         
@@ -122,8 +126,7 @@ class TableViewController: UITableViewController {
         if segue.identifier == "showDetails" {
             if let indexPath = tableView.indexPathForSelectedRow{
                 let destinationController = segue.destination as! detailViewController
-                destinationController.gymImageName = gymImages[indexPath.row]
-                destinationController.gymName = gymNames[indexPath.row]
+                destinationController.gymDetails = gyms[indexPath.row]
             }
         }
     }
@@ -131,21 +134,18 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            gymNames.remove(at: indexPath.row)
-            gymLocations.remove(at: indexPath.row)
-            gymTypes.remove(at: indexPath.row)
-            gymImages.remove(at: indexPath.row)
-            gymVisited.remove(at: indexPath.row)
+            gyms.remove(at: indexPath.row)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             
              }
         
-        for name in gymNames {
+        
+        for name in gyms[indexPath.row].name {
             print(name)
         }
-        print("Total item: \(gymNames.count)")
+        print("Total item: \(gyms.count)")
         
         tableView.reloadData()
     }
@@ -156,11 +156,8 @@ class TableViewController: UITableViewController {
         { (action, sourceView, completionHeadler) in
             
          //delete row from the data source
-            self.gymNames.remove(at: indexPath.row)
-            self.gymTypes.remove(at: indexPath.row)
-            self.gymLocations.remove(at: indexPath.row)
-            self.gymVisited.remove(at: indexPath.row)
-            self.gymImages.remove(at: indexPath.row)
+            self.gyms.remove(at: indexPath.row)
+        
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             completionHeadler(true)
         }
@@ -168,10 +165,10 @@ class TableViewController: UITableViewController {
         
         let shareAction = UIContextualAction(style: .normal, title: "Share"){
             (action,sourceView,completionHandler) in
-            let defaultText = "Just checking in at" + self.gymNames[indexPath.row]
+            let defaultText = "Just checking in at" + self.gyms[indexPath.row].name
             
             let activityController: UIActivityViewController
-            if let imageToShare = UIImage(named: self.gymImages[indexPath.row]){
+            if let imageToShare = UIImage(named: self.gyms[indexPath.row].image){
                 activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
             } else {
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
@@ -196,7 +193,7 @@ class TableViewController: UITableViewController {
         
         let clickAction = UIContextualAction(style: .normal, title: "Click"){
             (action,sourceView,completionHandler) in
-            let clickText = "Clicked" + self.gymNames[indexPath.row]
+            let clickText = "Clicked" + self.gyms[indexPath.row].name
             let clickedController = UIAlertController(title: "Test click", message: "OK", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             

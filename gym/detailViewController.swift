@@ -11,19 +11,28 @@ import UIKit
 class detailViewController: UIViewController {
 
     @IBOutlet var gymImageView: UIImageView!
-    @IBOutlet var gymNameLabel: UILabel!
     
-    var gymImageName = ""
-    var gymName = ""
+    @IBOutlet var gymNameLabel: UILabel!
+    @IBOutlet var gymTypeLabel: UILabel!
+    @IBOutlet var gymLocalLabel: UILabel!
+    
+    
+    var gymDetails = gym()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        gymImageView.image = UIImage(named: gymImageName)
+        gymImageView.image = UIImage(named: gymDetails.image)
         
-        gymNameLabel.text = gymName
+        gymNameLabel.text = gymDetails.name
+        gymTypeLabel.text = gymDetails.type
+        gymLocalLabel.text = gymDetails.local
+        
+        
         // Do any additional setup after loading the view.
+        
+        navigationItem.largeTitleDisplayMode = .never
     }
 
 
