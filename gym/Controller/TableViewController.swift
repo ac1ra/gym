@@ -57,7 +57,8 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! GymTableViewCell
+        let cellidentifer = "datacell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellidentifer, for: indexPath) as! GymTableViewCell
 
         // Configure the cell...
 
