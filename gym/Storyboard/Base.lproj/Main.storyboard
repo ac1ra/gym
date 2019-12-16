@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
+        </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Gym-->
         <scene sceneID="H4h-rv-hUd">
@@ -164,6 +172,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="3og-1y-jXm" userLabel="Header View">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lUo-jv-WS0" userLabel="Header Image View">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNn-n2-fe2" userLabel="Name Label">
+                                    <rect key="frame" x="17" y="177" width="92" height="42"/>
+                                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="35"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vA-wM-ym6" userLabel="Type Label">
+                                    <rect key="frame" x="14" y="222" width="100" height="20"/>
+                                    <color key="backgroundColor" red="0.84438451780000001" green="0.40366101529999998" blue="0.31855137100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="oHK-5U-gwk"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="uAP-V0-Mxm"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="13"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cLU-fQ-GG6" userLabel="Heart ImageView">
+                                    <rect key="frame" x="128" y="224.5" width="15" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="15" id="5be-Oy-KZi"/>
+                                        <constraint firstAttribute="width" constant="15" id="nb0-d2-ICU"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="cLU-fQ-GG6" firstAttribute="leading" secondItem="0vA-wM-ym6" secondAttribute="trailing" constant="14" id="8WS-O0-Fp4"/>
+                                <constraint firstItem="0vA-wM-ym6" firstAttribute="top" secondItem="pNn-n2-fe2" secondAttribute="bottom" constant="3" id="H4u-Lx-Mvo"/>
+                                <constraint firstAttribute="trailing" secondItem="lUo-jv-WS0" secondAttribute="trailing" id="Kc8-Ud-rPa"/>
+                                <constraint firstItem="lUo-jv-WS0" firstAttribute="top" secondItem="3og-1y-jXm" secondAttribute="top" id="Tbe-mP-Kc1"/>
+                                <constraint firstItem="lUo-jv-WS0" firstAttribute="leading" secondItem="3og-1y-jXm" secondAttribute="leading" id="VnW-zx-28O"/>
+                                <constraint firstItem="cLU-fQ-GG6" firstAttribute="centerY" secondItem="0vA-wM-ym6" secondAttribute="centerY" id="Y8U-aU-26W"/>
+                                <constraint firstAttribute="bottom" secondItem="lUo-jv-WS0" secondAttribute="bottom" id="ZLq-sF-jxg"/>
+                                <constraint firstItem="0vA-wM-ym6" firstAttribute="leading" secondItem="3og-1y-jXm" secondAttribute="leading" constant="14" id="h2v-dT-PeG"/>
+                                <constraint firstAttribute="bottom" secondItem="0vA-wM-ym6" secondAttribute="bottom" constant="8" id="sGU-X1-vZj"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="E4H-Lg-zRa">
+                                <rect key="frame" x="0.0" y="278" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E4H-Lg-zRa" id="Wxo-FV-e6l">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cus-75-gp8">
+                                <rect key="frame" x="0.0" y="322" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cus-75-gp8" id="1gP-r3-TdE">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="cK2-an-xCL" id="0lg-2H-tTv"/>
                             <outlet property="delegate" destination="cK2-an-xCL" id="ipD-aV-VCT"/>
