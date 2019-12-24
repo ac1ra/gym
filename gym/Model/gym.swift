@@ -9,17 +9,22 @@ class gym {
     var type:String
     var local:String
     var image:String
+    var description: String
+    var phone: String
+    
     var isVisited: Bool
     
-    init(name:String,type:String,local:String,image:String,isVisited:Bool) {
+    init(name:String,type:String,local:String,image:String,description:String,phone:String,isVisited:Bool) {
         self.name = name
         self.type = type
         self.local = local
         self.image = image
+        self.description = description
+        self.phone = phone
         self.isVisited = isVisited
     }
     
     convenience init() {
-        self.init(name:"",type:"",local:"",image:"",isVisited:false)
+        self.init(name:"",type:"",local:"",image:"",description:"",phone:"",isVisited:false)
     }
 }

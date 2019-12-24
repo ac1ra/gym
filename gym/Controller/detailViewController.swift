@@ -8,42 +8,61 @@
 
 import UIKit
 
-class detailViewController: UIViewController {
+class detailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet var gymImageView: UIImageView!
     
-    @IBOutlet var gymNameLabel: UILabel!
-    @IBOutlet var gymTypeLabel: UILabel!
-    @IBOutlet var gymLocalLabel: UILabel!
-    
+
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var headerView: gymDetailHeaderView!
     
     var gymDetails = gym()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        gymImageView.image = UIImage(named: gymDetails.image)
+        headerView.headerImageView.image = UIImage(named: gymDetails.image)
         
-        gymNameLabel.text = gymDetails.name
-        gymTypeLabel.text = gymDetails.type
-        gymLocalLabel.text = gymDetails.local
+        headerView.nameLabel.text = gymDetails.name
+        headerView.typeLabel.text = gymDetails.type
+        headerView.heartImageView.isHidden = (gymDetails.isVisited) ? false : true
         
-        
+        headerView.heartImageView.image = UIImage(named: "tick")
         // Do any additional setup after loading the view.
         
         navigationItem.largeTitleDisplayMode = .never
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymTextCell.self), for: indexPath) as! detailIconTextCell
+            cell.iconImageView.image = UIImage(named: "phone")
+            cell.cellTextLabel.text = gymDetails.phone
+            cell.selectionStyle = .none
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: detailIconTextCell.self), for: indexPath) as! detailIconTextCell
+            cell.iconImageView.image = UIImage(named: "map")
+            cell.cellTextLabel.text = gymDetails.local
+            cell.selectionStyle = .none
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymTextCell.self), for: indexPath) as! gymTextCell
+            cell.description
+            cell.descriptionLabel.text = gymDetails.description
+            cell.selectionStyle = .none
+            return cell
+        default:
+            fatalError("Failed to instantiate")
+        }
+    }
 }
