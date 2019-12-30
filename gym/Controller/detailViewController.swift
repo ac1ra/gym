@@ -10,8 +10,6 @@ import UIKit
 
 class detailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
-
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: gymDetailHeaderView!
     
@@ -19,6 +17,10 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
 
         headerView.headerImageView.image = UIImage(named: gymDetails.image)
         
@@ -26,25 +28,34 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         headerView.typeLabel.text = gymDetails.type
         headerView.heartImageView.isHidden = (gymDetails.isVisited) ? false : true
         
-        headerView.heartImageView.image = UIImage(named: "tick")
+        headerView.heartImageView.image = UIImage(named: "heart-tick")
+        
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
+        
+        tableView.contentInsetAdjustmentBehavior = .never
         
         navigationItem.largeTitleDisplayMode = .never
+        
+
     }
 
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymTextCell.self), for: indexPath) as! detailIconTextCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: detailIconTextCell.self), for: indexPath) as! detailIconTextCell
             cell.iconImageView.image = UIImage(named: "phone")
             cell.cellTextLabel.text = gymDetails.phone
             cell.selectionStyle = .none
@@ -55,9 +66,8 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
             cell.cellTextLabel.text = gymDetails.local
             cell.selectionStyle = .none
             return cell
-        case 3:
+        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymTextCell.self), for: indexPath) as! gymTextCell
-            cell.description
             cell.descriptionLabel.text = gymDetails.description
             cell.selectionStyle = .none
             return cell

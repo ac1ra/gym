@@ -13,7 +13,6 @@ class gym {
     var phone: String
     
     var isVisited: Bool
-    
     init(name:String,type:String,local:String,image:String,description:String,phone:String,isVisited:Bool) {
         self.name = name
         self.type = type
