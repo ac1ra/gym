@@ -102,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="533" y="-44"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Gym-->
         <scene sceneID="AQc-yg-J1B">
             <objects>
                 <viewController id="QDB-FF-RIY" customClass="detailViewController" customModule="gym" customModuleProvider="target" sceneMemberID="viewController">
@@ -259,6 +259,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WoT-Vn-IA7"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Gym" id="6eE-nY-FOh"/>
                     <connections>
                         <outlet property="headerView" destination="ExP-kS-j5e" id="aWv-JW-ViB"/>
                         <outlet property="tableView" destination="jNC-2Z-LY2" id="fxx-tA-jfO"/>
@@ -271,7 +272,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dAW-8f-dFO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0dt-zL-bip" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="0dt-zL-bip" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="djb-Vc-IlZ">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>

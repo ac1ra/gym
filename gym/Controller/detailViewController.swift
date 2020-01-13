@@ -35,10 +35,12 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .white
         
+        //manage to hide on the navigationBar
+        navigationController?.hidesBarsOnSwipe = false
+        
         tableView.contentInsetAdjustmentBehavior = .never
         
         navigationItem.largeTitleDisplayMode = .never
-        
 
     }
 
