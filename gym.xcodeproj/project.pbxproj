@@ -19,6 +19,10 @@
 		A49884702392AC6E00CD57C6 /* GymTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A498846F2392AC6E00CD57C6 /* GymTableViewCell.swift */; };
 		A4A8784023CC9E1E00078880 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8783F23CC9E1E00078880 /* UIColor+Ext.swift */; };
 		A4E0415523A02CCB0083FEAD /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E0415423A02CCB0083FEAD /* detailViewController.swift */; };
+		A4ED25EF23CDC6E200A3E0EC /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED25EE23CDC6E200A3E0EC /* UINavigationController+Ext.swift */; };
+		A4ED25F223CDD9C500A3E0EC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED25F123CDD9C500A3E0EC /* MapKit.framework */; };
+		A4ED25F423CDE13600A3E0EC /* gymDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED25F323CDE13600A3E0EC /* gymDetailSeparatorCell.swift */; };
+		A4ED25F623CDE1D000A3E0EC /* gymDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED25F523CDE1D000A3E0EC /* gymDetailMapCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		A4C7C2CD23A3BE67008CC0D3 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		A4C7C2CE23A3BE67008CC0D3 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
 		A4E0415423A02CCB0083FEAD /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
+		A4ED25EE23CDC6E200A3E0EC /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		A4ED25F123CDD9C500A3E0EC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A4ED25F323CDE13600A3E0EC /* gymDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymDetailSeparatorCell.swift; sourceTree = "<group>"; };
+		A4ED25F523CDE1D000A3E0EC /* gymDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymDetailMapCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4ED25F223CDD9C500A3E0EC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +74,7 @@
 				A4C7C2C423A3BE3E008CC0D3 /* Resources */,
 				A498845A239255BE00CD57C6 /* gym */,
 				A4988459239255BE00CD57C6 /* Products */,
+				A4ED25F023CDD9C500A3E0EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				A4A8783F23CC9E1E00078880 /* UIColor+Ext.swift */,
+				A4ED25EE23CDC6E200A3E0EC /* UINavigationController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,6 +134,8 @@
 				A498846F2392AC6E00CD57C6 /* GymTableViewCell.swift */,
 				A400BD3E23B231C000272B91 /* gymTextCell.swift */,
 				A400BD3C23B2292700272B91 /* detailIconTextCell.swift */,
+				A4ED25F323CDE13600A3E0EC /* gymDetailSeparatorCell.swift */,
+				A4ED25F523CDE1D000A3E0EC /* gymDetailMapCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +164,14 @@
 				A4C7C2C823A3BE66008CC0D3 /* Rubik-Regular.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A4ED25F023CDD9C500A3E0EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4ED25F123CDD9C500A3E0EC /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +206,11 @@
 				TargetAttributes = {
 					A4988457239255BE00CD57C6 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -224,12 +250,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4ED25F423CDE13600A3E0EC /* gymDetailSeparatorCell.swift in Sources */,
 				A400BD3D23B2292700272B91 /* detailIconTextCell.swift in Sources */,
 				A498845C239255BE00CD57C6 /* AppDelegate.swift in Sources */,
+				A4ED25F623CDE1D000A3E0EC /* gymDetailMapCell.swift in Sources */,
 				A47453FF23A269A500B40CA5 /* gym.swift in Sources */,
 				A498846E2392564900CD57C6 /* TableViewController.swift in Sources */,
 				A49884702392AC6E00CD57C6 /* GymTableViewCell.swift in Sources */,
 				A400BD3B23B2172300272B91 /* gymDetailHeaderView.swift in Sources */,
+				A4ED25EF23CDC6E200A3E0EC /* UINavigationController+Ext.swift in Sources */,
 				A4A8784023CC9E1E00078880 /* UIColor+Ext.swift in Sources */,
 				A400BD3F23B231C000272B91 /* gymTextCell.swift in Sources */,
 				A4E0415523A02CCB0083FEAD /* detailViewController.swift in Sources */,

@@ -50,7 +50,7 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,6 +72,18 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymTextCell.self), for: indexPath) as! gymTextCell
             cell.descriptionLabel.text = gymDetails.description
             cell.selectionStyle = .none
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymDetailSeparatorCell.self),for: indexPath) as! gymDetailSeparatorCell
+            cell.titleLabel.text = "how to get here"
+            cell.selectionStyle = .none
+            
+            return cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymDetailMapCell.self),for: indexPath) as! gymDetailMapCell
+            cell.selectionStyle = .none
+            
+            cell.configurate(location: gymDetails.local)
             return cell
         default:
             fatalError("Failed to instantiate")

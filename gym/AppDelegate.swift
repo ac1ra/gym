@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backIndicatorImage = backBttnImage
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = backBttnImage
         
+        UIApplication.shared.statusBarStyle = .lightContent
         
         return true
     }
