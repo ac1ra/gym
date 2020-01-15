@@ -89,4 +89,11 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
             fatalError("Failed to instantiate")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! mapViewController
+            destinationController.gyms = gymDetails
+        }
+    }
 }

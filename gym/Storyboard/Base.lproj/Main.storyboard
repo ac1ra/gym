@@ -179,6 +179,29 @@
                                         <outlet property="typeLabel" destination="wZd-0R-zU3" id="fFV-lW-626"/>
                                     </connections>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="2CX-dC-ec2">
+                                    <rect key="frame" x="0.0" y="625" width="320" height="90"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="go0-BM-2sd">
+                                            <rect key="frame" x="15" y="22" width="290" height="47"/>
+                                            <color key="backgroundColor" red="0.84438451780000001" green="0.40366101529999998" blue="0.31855137100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="47" id="W4D-e9-7Fo"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <state key="normal" title="Rate it">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="go0-BM-2sd" firstAttribute="leading" secondItem="2CX-dC-ec2" secondAttribute="leading" constant="15" id="4SN-s9-wYk"/>
+                                        <constraint firstItem="go0-BM-2sd" firstAttribute="top" secondItem="2CX-dC-ec2" secondAttribute="top" constant="22" id="G0A-B0-Nbl"/>
+                                        <constraint firstAttribute="trailing" secondItem="go0-BM-2sd" secondAttribute="trailing" constant="15" id="YVj-Zx-K7V"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailIconTextCell" id="vGY-jp-J2n" userLabel="detailIconTextCell" customClass="detailIconTextCell" customModule="gym" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="278" width="320" height="44"/>
@@ -333,10 +356,10 @@
             </objects>
             <point key="canvasLocation" x="1398.75" y="-44.366197183098592"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="UEm-1K-SJs">
             <objects>
-                <viewController id="2m6-hK-cKC" sceneMemberID="viewController">
+                <viewController id="2m6-hK-cKC" customClass="mapViewController" customModule="gym" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qe5-hJ-7TN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,6 +377,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wmd-sc-iJA"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="503-KL-d9J" id="k29-Cr-JHw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmc-IN-icH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
