@@ -85,6 +85,8 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
             
             cell.configurate(location: gymDetails.local)
             return cell
+
+            
         default:
             fatalError("Failed to instantiate")
         }
@@ -94,6 +96,9 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         if segue.identifier == "showMap" {
             let destinationController = segue.destination as! mapViewController
             destinationController.gyms = gymDetails
+        } else if segue.identifier == "showReview"{
+            let destinationContorller = segue.destination as! reviewViewController
+            destinationContorller.rgyms = gymDetails
         }
     }
 }

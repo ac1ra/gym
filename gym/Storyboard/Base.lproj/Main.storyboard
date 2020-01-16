@@ -199,7 +199,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="JXi-gW-96D" kind="show" id="qaP-oj-2BR"/>
+                                                <segue destination="JXi-gW-96D" kind="show" identifier="showReview" id="qaP-oj-2BR"/>
                                             </connections>
                                         </button>
                                     </subviews>

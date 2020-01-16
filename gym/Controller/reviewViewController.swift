@@ -12,12 +12,13 @@ class reviewViewController: UIViewController {
 
     @IBOutlet var backgroundImageView: UIImageView!
     
-    var gyms = gym()
+    var rgyms = gym()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(rgyms)
+        backgroundImageView.image = UIImage(named: rgyms.image)
         
-        backgroundImageView.image = UIImage(named: gyms.image)
         // Do any additional setup after loading the view.
     }
     
