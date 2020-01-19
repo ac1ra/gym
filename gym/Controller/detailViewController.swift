@@ -13,6 +13,10 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: gymDetailHeaderView!
     
+    @IBAction func exit(segue:UIStoryboardSegue){
+        dismiss(animated: true, completion: nil)
+    }
+    
     var gymDetails = gym()
     
     override func viewDidLoad() {

@@ -125,7 +125,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N3B-IS-a3c" userLabel="Name Label">
-                                            <rect key="frame" x="14" y="178" width="86" height="41"/>
+                                            <rect key="frame" x="14" y="178" width="88" height="41"/>
                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="35"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -229,7 +229,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRj-iL-YVf">
-                                                            <rect key="frame" x="30" y="1.5" width="255" height="16.5"/>
+                                                            <rect key="frame" x="30" y="1" width="255" height="17"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -401,35 +401,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dT8-9u-tyW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dT8-9u-tyW">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-vo-xIw">
-                                <rect key="frame" x="268" y="41" width="33" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-vo-xIw">
+                                <rect key="frame" x="272" y="79" width="33" height="32"/>
                                 <state key="normal" image="cross"/>
+                                <connections>
+                                    <segue destination="dMt-CX-o2x" kind="unwind" unwindAction="exitWithSegue:" id="gEa-CP-DwZ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="htm-GY-vq8">
-                                <rect key="frame" x="94.5" y="43.5" width="131" height="481"/>
+                                <rect key="frame" x="46.5" y="43.5" width="227" height="481"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4m-yJ-rNt">
-                                        <rect key="frame" x="0.0" y="0.0" width="117" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="188" height="82"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Love" image="love"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVz-48-LUR">
-                                        <rect key="frame" x="0.0" y="92" width="115" height="83"/>
+                                        <rect key="frame" x="0.0" y="92" width="181" height="83"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Cool" image="cool"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djx-E6-Y2A">
-                                        <rect key="frame" x="0.0" y="185" width="131" height="86"/>
+                                        <rect key="frame" x="0.0" y="185" width="227" height="86"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Happy" image="happy"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig5-Ye-xgc">
-                                        <rect key="frame" x="0.0" y="281" width="110" height="87"/>
+                                        <rect key="frame" x="0.0" y="281" width="167" height="87"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Sad" image="sad"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBa-wH-BtY">
-                                        <rect key="frame" x="0.0" y="378" width="127" height="103"/>
+                                        <rect key="frame" x="0.0" y="378" width="218" height="103"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Angry" image="angry"/>
                                     </button>
                                 </subviews>
@@ -440,17 +447,25 @@
                             <constraint firstItem="dT8-9u-tyW" firstAttribute="leading" secondItem="az9-SB-PcW" secondAttribute="leading" id="6c0-Ao-i4h"/>
                             <constraint firstItem="az9-SB-PcW" firstAttribute="bottom" secondItem="dT8-9u-tyW" secondAttribute="bottom" id="Pm9-On-meq"/>
                             <constraint firstItem="dT8-9u-tyW" firstAttribute="top" secondItem="az9-SB-PcW" secondAttribute="top" id="WPE-hg-Unw"/>
+                            <constraint firstItem="az9-SB-PcW" firstAttribute="trailing" secondItem="zAl-vo-xIw" secondAttribute="trailing" constant="15" id="auc-tD-yC9"/>
                             <constraint firstItem="az9-SB-PcW" firstAttribute="trailing" secondItem="dT8-9u-tyW" secondAttribute="trailing" id="fqf-E8-Ka9"/>
                             <constraint firstItem="htm-GY-vq8" firstAttribute="centerX" secondItem="y4F-Vf-WqC" secondAttribute="centerX" id="koJ-ix-ENX"/>
                             <constraint firstItem="htm-GY-vq8" firstAttribute="centerY" secondItem="y4F-Vf-WqC" secondAttribute="centerY" id="o4Y-uh-TGq"/>
+                            <constraint firstItem="zAl-vo-xIw" firstAttribute="top" secondItem="az9-SB-PcW" secondAttribute="top" constant="15" id="p4Q-71-2Dy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="az9-SB-PcW"/>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="dT8-9u-tyW" id="bHy-K0-aRq"/>
+                        <outletCollection property="rateButtons" destination="j4m-yJ-rNt" collectionClass="NSMutableArray" id="PpT-dx-hci"/>
+                        <outletCollection property="rateButtons" destination="wVz-48-LUR" collectionClass="NSMutableArray" id="lhn-QJ-0i5"/>
+                        <outletCollection property="rateButtons" destination="Djx-E6-Y2A" collectionClass="NSMutableArray" id="vSF-l2-kok"/>
+                        <outletCollection property="rateButtons" destination="Ig5-Ye-xgc" collectionClass="NSMutableArray" id="oak-Oh-R7I"/>
+                        <outletCollection property="rateButtons" destination="YBa-wH-BtY" collectionClass="NSMutableArray" id="NUz-Lj-Zw9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi0-hp-yHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dMt-CX-o2x" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2270" y="493"/>
         </scene>
