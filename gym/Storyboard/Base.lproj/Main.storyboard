@@ -125,7 +125,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N3B-IS-a3c" userLabel="Name Label">
-                                            <rect key="frame" x="14" y="178" width="86" height="41"/>
+                                            <rect key="frame" x="14" y="178" width="88" height="41"/>
                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="35"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -229,7 +229,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRj-iL-YVf">
-                                                            <rect key="frame" x="30" y="1.5" width="255" height="16.5"/>
+                                                            <rect key="frame" x="30" y="1" width="255" height="17"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -410,26 +410,26 @@
                                 <state key="normal" image="cross"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="htm-GY-vq8">
-                                <rect key="frame" x="94.5" y="43.5" width="131" height="481"/>
+                                <rect key="frame" x="125.5" y="209" width="69" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4m-yJ-rNt">
-                                        <rect key="frame" x="0.0" y="0.0" width="117" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="22"/>
                                         <state key="normal" title="Love" image="love"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVz-48-LUR">
-                                        <rect key="frame" x="0.0" y="92" width="115" height="83"/>
+                                        <rect key="frame" x="0.0" y="32" width="53" height="22"/>
                                         <state key="normal" title="Cool" image="cool"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djx-E6-Y2A">
-                                        <rect key="frame" x="0.0" y="185" width="131" height="86"/>
+                                        <rect key="frame" x="0.0" y="64" width="69" height="22"/>
                                         <state key="normal" title="Happy" image="happy"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig5-Ye-xgc">
-                                        <rect key="frame" x="0.0" y="281" width="110" height="87"/>
+                                        <rect key="frame" x="0.0" y="96" width="48" height="22"/>
                                         <state key="normal" title="Sad" image="sad"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBa-wH-BtY">
-                                        <rect key="frame" x="0.0" y="378" width="127" height="103"/>
+                                        <rect key="frame" x="0.0" y="128" width="65" height="22"/>
                                         <state key="normal" title="Angry" image="angry"/>
                                     </button>
                                 </subviews>
