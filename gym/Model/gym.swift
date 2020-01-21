@@ -13,7 +13,9 @@ class gym {
     var phone: String
     
     var isVisited: Bool
-    init(name:String,type:String,local:String,image:String,description:String,phone:String,isVisited:Bool) {
+    var rating: String
+    
+    init(name:String,type:String,local:String,image:String,description:String,phone:String,isVisited:Bool,rating: String="") {
         self.name = name
         self.type = type
         self.local = local
@@ -21,6 +23,7 @@ class gym {
         self.description = description
         self.phone = phone
         self.isVisited = isVisited
+        self.rating = rating
     }
     
     convenience init() {

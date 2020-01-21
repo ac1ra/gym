@@ -21,7 +21,7 @@ class reviewViewController: UIViewController {
         print(rgyms)
         backgroundImageView.image = UIImage(named: rgyms.image)
         
-        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)

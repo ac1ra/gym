@@ -17,6 +17,16 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet var ratingImageView: UIImageView!
+    
+    @IBAction func rateGym(segue: UIStoryboardSegue){
+        if let rating = segue.identifier{
+            self.gymDetails.rating = rating
+            self.ratingImageView.image = UIImage(named: rating)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
     var gymDetails = gym()
     
     override func viewDidLoad() {
