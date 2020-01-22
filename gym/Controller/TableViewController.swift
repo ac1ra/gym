@@ -34,6 +34,10 @@ class TableViewController: UITableViewController {
         gym(name: "CASK Pub and Kitchen", type: "Thai", local: "London", image: "CASK Pub and Kitchen",description: "", phone: "", isVisited: false)
     ]
     
+    @IBAction func unwindToHome(segue:UIStoryboardSegue){
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,7 +45,7 @@ class TableViewController: UITableViewController {
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .black
         
         if let customFont = UIFont(name: "Rubik-Medium", size: 10.0) {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 210.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont]

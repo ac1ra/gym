@@ -12,6 +12,8 @@
 		A400BD3F23B231C000272B91 /* gymTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400BD3E23B231C000272B91 /* gymTextCell.swift */; };
 		A44F7CC823CEF42200E5599D /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44F7CC723CEF42200E5599D /* mapViewController.swift */; };
 		A47453FF23A269A500B40CA5 /* gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47453FE23A269A400B40CA5 /* gym.swift */; };
+		A476B63223D85D9800BAC912 /* roundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A476B63123D85D9800BAC912 /* roundedTextField.swift */; };
+		A476B63423D8621500BAC912 /* newGymController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A476B63323D8621500BAC912 /* newGymController.swift */; };
 		A48F8B0423D06AD700969CB6 /* reviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48F8B0323D06AD700969CB6 /* reviewViewController.swift */; };
 		A498845C239255BE00CD57C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A498845B239255BE00CD57C6 /* AppDelegate.swift */; };
 		A4988461239255BE00CD57C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A498845F239255BE00CD57C6 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		A400BD3E23B231C000272B91 /* gymTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymTextCell.swift; sourceTree = "<group>"; };
 		A44F7CC723CEF42200E5599D /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 		A47453FE23A269A400B40CA5 /* gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gym.swift; sourceTree = "<group>"; };
+		A476B63123D85D9800BAC912 /* roundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedTextField.swift; sourceTree = "<group>"; };
+		A476B63323D8621500BAC912 /* newGymController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGymController.swift; sourceTree = "<group>"; };
 		A48F8B0323D06AD700969CB6 /* reviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewViewController.swift; sourceTree = "<group>"; };
 		A4988458239255BE00CD57C6 /* gym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A498845B239255BE00CD57C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				A4E0415423A02CCB0083FEAD /* detailViewController.swift */,
 				A44F7CC723CEF42200E5599D /* mapViewController.swift */,
 				A48F8B0323D06AD700969CB6 /* reviewViewController.swift */,
+				A476B63323D8621500BAC912 /* newGymController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				A400BD3C23B2292700272B91 /* detailIconTextCell.swift */,
 				A4ED25F323CDE13600A3E0EC /* gymDetailSeparatorCell.swift */,
 				A4ED25F523CDE1D000A3E0EC /* gymDetailMapCell.swift */,
+				A476B63123D85D9800BAC912 /* roundedTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 			files = (
 				A4ED25F423CDE13600A3E0EC /* gymDetailSeparatorCell.swift in Sources */,
 				A400BD3D23B2292700272B91 /* detailIconTextCell.swift in Sources */,
+				A476B63223D85D9800BAC912 /* roundedTextField.swift in Sources */,
 				A498845C239255BE00CD57C6 /* AppDelegate.swift in Sources */,
 				A4ED25F623CDE1D000A3E0EC /* gymDetailMapCell.swift in Sources */,
 				A47453FF23A269A500B40CA5 /* gym.swift in Sources */,
@@ -267,6 +274,7 @@
 				A400BD3B23B2172300272B91 /* gymDetailHeaderView.swift in Sources */,
 				A44F7CC823CEF42200E5599D /* mapViewController.swift in Sources */,
 				A4ED25EF23CDC6E200A3E0EC /* UINavigationController+Ext.swift in Sources */,
+				A476B63423D8621500BAC912 /* newGymController.swift in Sources */,
 				A4A8784023CC9E1E00078880 /* UIColor+Ext.swift in Sources */,
 				A400BD3F23B231C000272B91 /* gymTextCell.swift in Sources */,
 				A4E0415523A02CCB0083FEAD /* detailViewController.swift in Sources */,

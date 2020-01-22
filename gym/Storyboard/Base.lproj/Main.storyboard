@@ -96,7 +96,13 @@
                             <outlet property="delegate" destination="w51-Aq-a5p" id="d7P-dD-8JG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Gym" id="nZM-ud-28c"/>
+                    <navigationItem key="navigationItem" title="Gym" id="nZM-ud-28c">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uXe-RJ-3uL">
+                            <connections>
+                                <segue destination="SpI-bF-IN3" kind="presentation" identifier="addGym" id="RWD-lo-qso"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJ4-ey-tI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,7 +138,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N3B-IS-a3c" userLabel="Name Label">
-                                            <rect key="frame" x="14" y="178" width="88" height="41"/>
+                                            <rect key="frame" x="14" y="178" width="86" height="41"/>
                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="35"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -238,7 +244,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRj-iL-YVf">
-                                                            <rect key="frame" x="30" y="1" width="255" height="17"/>
+                                                            <rect key="frame" x="30" y="1.5" width="255" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -372,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wez-jK-IJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398.75" y="-44.366197183098592"/>
+            <point key="canvasLocation" x="1399" y="-21"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="UEm-1K-SJs">
@@ -403,10 +409,10 @@
             </objects>
             <point key="canvasLocation" x="2258" y="-220"/>
         </scene>
-        <!--Table View Controller-->
+        <!--New Gym-->
         <scene sceneID="RTE-fK-Kxw">
             <objects>
-                <tableViewController id="ahu-WG-muI" sceneMemberID="viewController">
+                <tableViewController id="ahu-WG-muI" customClass="newGymController" customModule="gym" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cnB-v3-O5O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -422,7 +428,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="9T5-SD-oqr">
-                                                    <rect key="frame" x="148" y="91" width="24" height="18"/>
+                                                    <rect key="frame" x="152" y="92" width="16" height="16"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -448,9 +454,10 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full in the gym name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vak-oB-Dt9">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full in the gym name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vak-oB-Dt9" customClass="roundedTextField" customModule="gym" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="25.5" width="288" height="40.5"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -472,18 +479,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gLr-zj-s0h">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gLr-zj-s0h">
                                                     <rect key="frame" x="16" y="11" width="288" height="66"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TYPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKF-5F-Ane">
-                                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full in the gym type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVN-0v-0zM">
-                                                            <rect key="frame" x="0.0" y="28.5" width="154" height="37.5"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full in the gym type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVN-0v-0zM" customClass="roundedTextField" customModule="gym" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="28.5" width="288" height="37.5"/>
+                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -505,18 +513,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ggl-W4-cUx">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ggl-W4-cUx">
                                                     <rect key="frame" x="16" y="11" width="288" height="66"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-Fa-zOT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="76.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5NG-65-gzf">
-                                                            <rect key="frame" x="0.0" y="28.5" width="96.5" height="37.5"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5NG-65-gzf" customClass="roundedTextField" customModule="gym" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="28.5" width="288" height="37.5"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -538,18 +547,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xHL-ly-NfX">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xHL-ly-NfX">
                                                     <rect key="frame" x="16" y="11" width="288" height="66"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRp-hM-mJk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="57.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJC-Qa-oOq">
-                                                            <rect key="frame" x="0.0" y="28.5" width="83.5" height="37.5"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJC-Qa-oOq" customClass="roundedTextField" customModule="gym" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="28.5" width="288" height="37.5"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -582,8 +592,8 @@
                                                         </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Just done it" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rc8-kw-AdP">
                                                             <rect key="frame" x="0.0" y="25.5" width="288" height="40.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
@@ -606,12 +616,28 @@
                             <outlet property="delegate" destination="ahu-WG-muI" id="83t-ks-Hhx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="CZj-v1-ve7"/>
+                    <navigationItem key="navigationItem" title="New Gym" id="CZj-v1-ve7">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="DpA-F7-Er3">
+                            <connections>
+                                <segue destination="A2l-mi-Jtm" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="UBL-yx-kjx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="save" id="tnM-Np-OfF"/>
+                    </navigationItem>
                     <size key="freeformSize" width="320" height="900"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="5NG-65-gzf" id="BK7-iw-irs"/>
+                        <outlet property="descriptionTextView" destination="Rc8-kw-AdP" id="by2-Zc-8JI"/>
+                        <outlet property="nameTextField" destination="vak-oB-Dt9" id="P6S-td-RS9"/>
+                        <outlet property="phoneTextField" destination="cJC-Qa-oOq" id="RPt-io-hVo"/>
+                        <outlet property="photoImageView" destination="9T5-SD-oqr" id="9E1-R2-mYB"/>
+                        <outlet property="typeTextField" destination="jVN-0v-0zM" id="lqY-NU-D33"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLL-Fs-bgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="A2l-mi-Jtm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4057.5" y="-223.94366197183098"/>
+            <point key="canvasLocation" x="2269" y="-1187"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="ovw-U2-cOE">
@@ -727,8 +753,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SpI-bF-IN3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="maD-W7-JuB">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="maD-W7-JuB">
+                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -738,16 +764,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O33-sI-WA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3060" y="-223.94366197183098"/>
+            <point key="canvasLocation" x="1399" y="-1187"/>
         </scene>
     </scenes>
     <resources>
         <image name="angry" width="78" height="103"/>
+        <image name="close" width="16" height="16"/>
         <image name="cool" width="78" height="83"/>
         <image name="cross" width="33" height="32"/>
         <image name="happy" width="78" height="86"/>
         <image name="love" width="78" height="82"/>
         <image name="photo" width="24" height="18"/>
         <image name="sad" width="78" height="87"/>
+        <image name="save" width="20" height="20"/>
     </resources>
 </document>
