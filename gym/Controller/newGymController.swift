@@ -72,6 +72,7 @@ class newGymController: UITableViewController, UITextFieldDelegate,UIImagePicker
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let photoSourceRequestController = UIAlertController(title: "", message: "Choose your photo source", preferredStyle: .actionSheet)
+            
             let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {
                 (action) in
                 if UIImagePickerController.isSourceTypeAvailable(.camera){
@@ -96,9 +97,13 @@ class newGymController: UITableViewController, UITextFieldDelegate,UIImagePicker
                     imagePicker.delegate = self
                 }
             })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
             photoSourceRequestController.addAction(cameraAction)
             photoSourceRequestController.addAction(photoLibraryAction)
+            photoSourceRequestController.addAction(cancelAction)
             
+            present(photoSourceRequestController,animated: true,completion: nil)
         }
     }
     
