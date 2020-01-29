@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var gyms: [gymMO] = []
+    var fetchResultController: NSFetchedResultsController<gymMO>!
+    
     
     @IBAction func unwindToHome(segue:UIStoryboardSegue){
         dismiss(animated: true, completion: nil)
@@ -21,9 +24,8 @@ class TableViewController: UITableViewController {
 
         navigationController?.navigationBar.prefersLargeTitles = true
         
- //       navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-     navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.backgroundColor = UIColor(red: 0, green: 100, blue: 241)
         
       tableView.backgroundView = emptyGymView
@@ -32,11 +34,27 @@ class TableViewController: UITableViewController {
         if let customFont = UIFont(name: "Rubik-Medium", size: 10.0) {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 210.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont]
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // fetch data from data store
+        let fetchRequest: NSFetchRequest<gymMO> = gymMO.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            
+            do{
+                try fetchResultController.performFetch()
+                if let fetchedObjects = fetchResultController.fetchedObjects{
+                    gyms = fetchedObjects
+                    
+                }
+                } catch {
+                    print("error with fetch")
+                }
+            return context
+            }
     }
 
     // MARK: - Table view data source

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class newGymController: UITableViewController, UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    var gum: gymMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +111,6 @@ class newGymController: UITableViewController, UITextFieldDelegate,UIImagePicker
         }
     }
     
-    
     @IBOutlet var photoImageView: UIImageView!
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey:Any]) {
@@ -134,18 +135,4 @@ class newGymController: UITableViewController, UITextFieldDelegate,UIImagePicker
         
         dismiss(animated: true, completion: nil)
     }
-//    @IBAction func buttonSave(_ sender: UIBarButtonItem) {
-//        let controllerSave = UIAlertController(title: "Oops", message: "Why did you click,stupid?", preferredStyle: .actionSheet)
-//        let clickB = UIAlertAction(title: "OK", style: .cancel, handler: {
-//            (action) in
-//            
-//            print("Well,the Button is work")
-//            
-//        })
-//        controllerSave.addAction(clickB)
-//        self.performSegue(withIdentifier: "unwindToHome", sender: self)
-//        self.dismiss(animated: true, completion: nil)
-//    
-//    }
-    
 }
