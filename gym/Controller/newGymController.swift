@@ -18,8 +18,10 @@ class newGymController: UITableViewController, UITextFieldDelegate,UIImagePicker
         // self.clearsSelectionOnViewWillAppear = false
 
         // Configure navigation bar appearance
-        navigationController?.navigationBar.tintColor = .white
+        
+        navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 0, green: 100, blue: 241)
         
         if let customFont = UIFont(name: "Rubik-Medium", size: 35.0) {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231, green: 76, blue: 60), NSAttributedString.Key.font: customFont]
@@ -132,4 +134,18 @@ class newGymController: UITableViewController, UITextFieldDelegate,UIImagePicker
         
         dismiss(animated: true, completion: nil)
     }
+//    @IBAction func buttonSave(_ sender: UIBarButtonItem) {
+//        let controllerSave = UIAlertController(title: "Oops", message: "Why did you click,stupid?", preferredStyle: .actionSheet)
+//        let clickB = UIAlertAction(title: "OK", style: .cancel, handler: {
+//            (action) in
+//            
+//            print("Well,the Button is work")
+//            
+//        })
+//        controllerSave.addAction(clickB)
+//        self.performSegue(withIdentifier: "unwindToHome", sender: self)
+//        self.dismiss(animated: true, completion: nil)
+//    
+//    }
+    
 }

@@ -27,6 +27,7 @@
 		A4ED25F223CDD9C500A3E0EC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED25F123CDD9C500A3E0EC /* MapKit.framework */; };
 		A4ED25F423CDE13600A3E0EC /* gymDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED25F323CDE13600A3E0EC /* gymDetailSeparatorCell.swift */; };
 		A4ED25F623CDE1D000A3E0EC /* gymDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED25F523CDE1D000A3E0EC /* gymDetailMapCell.swift */; };
+		A4EDD6A423E039B600666169 /* gymData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4EDD6A223E039B600666169 /* gymData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		A4ED25F123CDD9C500A3E0EC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A4ED25F323CDE13600A3E0EC /* gymDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymDetailSeparatorCell.swift; sourceTree = "<group>"; };
 		A4ED25F523CDE1D000A3E0EC /* gymDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymDetailMapCell.swift; sourceTree = "<group>"; };
+		A4EDD6A323E039B600666169 /* gymData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = gymData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				A4C7C2C323A3BCDA008CC0D3 /* Storyboard */,
 				A4988467239255BF00CD57C6 /* Info.plist */,
 				A400BD3A23B2172300272B91 /* gymDetailHeaderView.swift */,
+				A4EDD6A223E039B600666169 /* gymData.xcdatamodeld */,
 			);
 			path = gym;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				A476B63223D85D9800BAC912 /* roundedTextField.swift in Sources */,
 				A498845C239255BE00CD57C6 /* AppDelegate.swift in Sources */,
 				A4ED25F623CDE1D000A3E0EC /* gymDetailMapCell.swift in Sources */,
+				A4EDD6A423E039B600666169 /* gymData.xcdatamodeld in Sources */,
 				A47453FF23A269A500B40CA5 /* gym.swift in Sources */,
 				A498846E2392564900CD57C6 /* TableViewController.swift in Sources */,
 				A48F8B0423D06AD700969CB6 /* reviewViewController.swift in Sources */,
@@ -477,6 +481,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A4EDD6A223E039B600666169 /* gymData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A4EDD6A323E039B600666169 /* gymData.xcdatamodel */,
+			);
+			currentVersion = A4EDD6A323E039B600666169 /* gymData.xcdatamodel */;
+			path = gymData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A4988450239255BE00CD57C6 /* Project object */;
 }

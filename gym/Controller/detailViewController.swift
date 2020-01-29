@@ -27,7 +27,7 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         dismiss(animated: true, completion: nil)
     }
     
-    var gymDetails = gym()
+    var gymDetails: gymMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.separatorStyle = .none
 
-        headerView.headerImageView.image = UIImage(named: gymDetails.image)
+        headerView.headerImageView.image = UIImage(data: gymDetails.image as! Data)
         
         headerView.nameLabel.text = gymDetails.name
         headerView.typeLabel.text = gymDetails.type
@@ -97,7 +97,7 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymDetailMapCell.self),for: indexPath) as! gymDetailMapCell
             cell.selectionStyle = .none
             
-            cell.configurate(location: gymDetails.local)
+            cell.configurate(location: gymDetails.local!)
             return cell
 
             

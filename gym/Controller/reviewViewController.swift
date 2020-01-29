@@ -14,12 +14,14 @@ class reviewViewController: UIViewController {
     
     @IBOutlet var rateButtons: [UIButton]! = []
     
-    var rgyms = gym()
+    var rgyms: gymMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print(rgyms)
-        backgroundImageView.image = UIImage(named: rgyms.image)
+        
+        backgroundImageView.image = UIImage(data: rgyms.image as! Data)
         
         let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)

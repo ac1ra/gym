@@ -13,7 +13,7 @@ class mapViewController: UIViewController,MKMapViewDelegate {
 
     @IBOutlet var mapView: MKMapView!
 
-    var gyms = gym()
+    var gyms: gymMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class mapViewController: UIViewController,MKMapViewDelegate {
         
         // Do any additional setup after loading the view.
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(gyms.local, completionHandler: {
+        geoCoder.geocodeAddressString(gyms.local!, completionHandler: {
             placemarks, error in
             if let error = error{
                 print(error)
