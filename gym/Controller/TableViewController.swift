@@ -14,7 +14,6 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     var gyms: [gymMO] = []
     var fetchResultController: NSFetchedResultsController<gymMO>!
     
-    
     @IBAction func unwindToHome(segue:UIStoryboardSegue){
         dismiss(animated: true, completion: nil)
     }
@@ -28,7 +27,7 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.backgroundColor = UIColor(red: 0, green: 100, blue: 241)
         
-      tableView.backgroundView = emptyGymView
+        tableView.backgroundView = emptyGymView
         tableView.backgroundView?.isHidden = true
         
         if let customFont = UIFont(name: "Rubik-Medium", size: 10.0) {
@@ -53,7 +52,6 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
                 } catch {
                     print("error with fetch")
                 }
-            return context
             }
     }
 
@@ -96,60 +94,7 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         
         return cell
     }
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        //меню с UIAlertController появляется при нажатии таблицы
-//        //create an option menu as an action sheet
-//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .alert)
-//        //add actions to the menu
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//        optionMenu.addAction(cancelAction)
-//        //Display to menu
-//        present(optionMenu,animated: true,completion: nil)
-//
-//
-//        let callActionHandler = {
-//            (action: UIAlertAction!) -> Void in
-//            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet", preferredStyle: .alert)
-//            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            self.present(alertMessage,animated: true,completion: nil)
-//        }
-//        //подключаем с помощью свойства handler callActionHandler(предупреждающее сообщение UIAlertAction) к callAction
-//        let callAction = UIAlertAction(title: "Call" + "12312-\(indexPath.row)", style: .default, handler: callActionHandler)
-//
-//        optionMenu.addAction(callAction)
-//
-//        let checkAction = UIAlertAction(title: "Check in", style: .default, handler: {
-//            (action: UIAlertAction!) -> Void in
-//
-//            let cell = tableView.cellForRow(at: indexPath)
-//
-//            if self.gyms[indexPath.row].isVisited == true{
-//                cell?.accessoryType = .checkmark
-//            }
-//        })
-//        let checkActionUndo = UIAlertAction(title: "Check Undo", style: .default, handler:{
-//            (action: UIAlertAction)->Void in
-//
-//            let  cell = tableView.cellForRow(at: indexPath)
-//            cell?.accessoryType = .none
-//            self.gyms[indexPath.row].isVisited = false
-//
-//        })
-//
-//        optionMenu.addAction(checkAction)
-//        optionMenu.addAction(checkActionUndo)
-//
-//        tableView.deselectRow(at: indexPath, animated: false)
-//
-//    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             if let indexPath = tableView.indexPathForSelectedRow{
@@ -240,5 +185,32 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     
     @IBOutlet var emptyGymView: UIImageView!
     
-    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath:IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath{
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath{
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+        default:
+            tableView.reloadData()
+        }
+        
+        if let fetchedObjects = controller.fetchedObjects{
+            gyms = fetchedObjects as! [gymMO]
+        }
+    }
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
 }

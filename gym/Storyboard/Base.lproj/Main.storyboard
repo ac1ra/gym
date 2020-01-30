@@ -644,7 +644,11 @@
                                 <segue destination="A2l-mi-Jtm" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="UBL-yx-kjx"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="save" id="tnM-Np-OfF"/>
+                        <barButtonItem key="rightBarButtonItem" image="save" id="tnM-Np-OfF">
+                            <connections>
+                                <action selector="saveButton:" destination="ahu-WG-muI" id="PnV-N3-hNC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="320" height="900"/>
                     <connections>

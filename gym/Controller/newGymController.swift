@@ -70,9 +70,32 @@ class newGymController: UITableViewController, UITextFieldDelegate,UIImagePicker
         if let nextTextField = view.viewWithTag(textField.tag + 1){
             textField.resignFirstResponder()
             nextTextField.becomeFirstResponder()
+        
         }
         return true
     }
+    
+    @IBAction func saveButton(_ sender: Any) {
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            
+            gum = gymMO(context: appDelegate.persistentContainer.viewContext)
+            gum.name = nameTextField.text
+            gum.type = typeTextField.text
+            gum.local = addressTextField.text
+            gum.phone = phoneTextField.text
+            gum.summary = descriptionTextView.text
+            gum.isVisited = false
+            
+            if let gumImage = photoImageView.image{
+                gum.image = gumImage.pngData()
+            }
+            
+            print("Saving data to context ...")
+            appDelegate.saveContext()
+        }
+    }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let photoSourceRequestController = UIAlertController(title: "", message: "Choose your photo source", preferredStyle: .actionSheet)
