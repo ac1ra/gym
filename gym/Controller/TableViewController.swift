@@ -33,26 +33,30 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         if let customFont = UIFont(name: "Rubik-Medium", size: 10.0) {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 210.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont]
         }
+        
         // fetch data from data store
         let fetchRequest: NSFetchRequest<gymMO> = gymMO.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
         
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
             let context = appDelegate.persistentContainer.viewContext
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultController.delegate = self
-            
+
             do{
                 try fetchResultController.performFetch()
                 if let fetchedObjects = fetchResultController.fetchedObjects{
                     gyms = fetchedObjects
-                    
+
                 }
                 } catch {
                     print("error with fetch")
-                }
             }
+        }
+
     }
 
     // MARK: - Table view data source

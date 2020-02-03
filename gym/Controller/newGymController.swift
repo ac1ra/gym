@@ -74,8 +74,9 @@ class newGymController: UITableViewController, UITextFieldDelegate,UIImagePicker
         }
         return true
     }
-    
-    @IBAction func saveButton(_ sender: Any) {
+
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
             
             gum = gymMO(context: appDelegate.persistentContainer.viewContext)

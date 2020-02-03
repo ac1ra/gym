@@ -16,16 +16,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var persistentContainer: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: "Your Model File Name")
+        let container = NSPersistentContainer(name: "gymData")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error {
+            if let error = error as NSError? {
                 
                 fatalError("Unresolved error, \((error as NSError).userInfo)")
             }
         })
         return container
     }()
-
+    
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do{
+                try context.save()
+            } catch{
+                //show the error here
+                let nserror = error as NSError
+                fatalError("Unsolved error \(nserror),\(nserror.userInfo)")
+            }
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
