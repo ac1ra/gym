@@ -53,7 +53,7 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
 
                 }
                 } catch {
-                    print("error with fetch")
+                    print("error with fetch", error)
             }
         }
 
@@ -133,6 +133,17 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         { (action, sourceView, completionHeadler) in
             
          //delete row from the data source
+            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                let context = appDelegate.persistentContainer.viewContext
+                
+                let gymToDelete = self.fetchResultController.object(at: indexPath)
+                
+                context.delete(gymToDelete)
+                
+                appDelegate.saveContext()
+            }
+            
             self.gyms.remove(at: indexPath.row)
         
             self.tableView.deleteRows(at: [indexPath], with: .fade)
@@ -187,7 +198,8 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         return swipeConfig
     }
     
-    @IBOutlet var emptyGymView: UIImageView!
+//    @IBOutlet var emptyGymView: UIImageView!
+    @IBOutlet var emptyGymView: UIView!
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()

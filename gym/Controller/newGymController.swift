@@ -80,6 +80,7 @@ class newGymController: UITableViewController, UITextFieldDelegate,UIImagePicker
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
             
             gum = gymMO(context: appDelegate.persistentContainer.viewContext)
+            
             gum.name = nameTextField.text
             gum.type = typeTextField.text
             gum.local = addressTextField.text

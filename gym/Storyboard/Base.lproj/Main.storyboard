@@ -104,7 +104,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="emptyGymView" destination="mjO-bW-0P3" id="lhm-23-j6P"/>
+                        <outlet property="emptyGymView" destination="zyy-Xj-Mvu" id="3MR-vV-OyB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJ4-ey-tI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -677,17 +677,17 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-vo-xIw">
-                                <rect key="frame" x="289" y="79" width="16" height="22"/>
+                                <rect key="frame" x="272" y="79" width="33" height="32"/>
                                 <state key="normal" image="cross"/>
                                 <connections>
                                     <segue destination="dMt-CX-o2x" kind="unwind" unwindAction="exitWithSegue:" id="gEa-CP-DwZ"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="htm-GY-vq8">
-                                <rect key="frame" x="78" y="116.5" width="164" height="335"/>
+                                <rect key="frame" x="46.5" y="43.5" width="227" height="481"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4m-yJ-rNt">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="59"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="188" height="82"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Love" image="love"/>
                                         <connections>
@@ -695,7 +695,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVz-48-LUR">
-                                        <rect key="frame" x="0.0" y="69" width="121" height="59"/>
+                                        <rect key="frame" x="0.0" y="92" width="181" height="83"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Cool" image="cool"/>
                                         <connections>
@@ -703,7 +703,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djx-E6-Y2A">
-                                        <rect key="frame" x="0.0" y="138" width="164" height="59"/>
+                                        <rect key="frame" x="0.0" y="185" width="227" height="86"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Happy" image="happy"/>
                                         <connections>
@@ -711,7 +711,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig5-Ye-xgc">
-                                        <rect key="frame" x="0.0" y="207" width="105" height="59"/>
+                                        <rect key="frame" x="0.0" y="281" width="167" height="87"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Sad" image="sad"/>
                                         <connections>
@@ -719,7 +719,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBa-wH-BtY">
-                                        <rect key="frame" x="0.0" y="276" width="147" height="59"/>
+                                        <rect key="frame" x="0.0" y="378" width="218" height="103"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
                                         <state key="normal" title="Angry" image="angry"/>
                                         <connections>

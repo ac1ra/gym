@@ -11,7 +11,6 @@ class gym {
     var image:String
     var description: String
     var phone: String
-    
     var isVisited: Bool
     var rating: String
     
