@@ -10,6 +10,8 @@ import UIKit
 
 class detailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var gymDetails: gymMO!
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: gymDetailHeaderView!
     
@@ -20,14 +22,31 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var ratingImageView: UIImageView!
     
     @IBAction func rateGym(segue: UIStoryboardSegue){
+        
+        dismiss(animated: true, completion: {
+            
         if let rating = segue.identifier{
             self.gymDetails.rating = rating
-            self.ratingImageView.image = UIImage(named: rating)
+            self.headerView.ratingImageView.image = UIImage(named: rating)
+            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                appDelegate.saveContext()
+            }
+            
+            let scaleTransform = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
+            self.headerView.ratingImageView.transform = scaleTransform
+            self.headerView.ratingImageView.alpha = 0
+            
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0, animations: {
+                self.headerView.ratingImageView.transform = .identity
+                self.headerView.ratingImageView.alpha = 1
+            }, completion: nil)
+            
         }
+            })
         dismiss(animated: true, completion: nil)
     }
-    
-    var gymDetails: gymMO!
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +63,12 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         
         headerView.heartImageView.image = UIImage(named: "heart-tick")
         
+        if let rating = gymDetails.rating{
+            headerView.ratingImageView.image = UIImage(named: rating)
+        }
+        
         // Do any additional setup after loading the view.
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .white
         
@@ -84,8 +107,9 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymTextCell.self), for: indexPath) as! gymTextCell
-            cell.descriptionLabel.text = gymDetails.description
+            cell.descriptionLabel.text = gymDetails.summary
             cell.selectionStyle = .none
+            
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: gymDetailSeparatorCell.self),for: indexPath) as! gymDetailSeparatorCell

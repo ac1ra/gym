@@ -144,9 +144,9 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
                 appDelegate.saveContext()
             }
             
-            self.gyms.remove(at: indexPath.row)
-        
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
+//            self.gyms.remove(at: indexPath.row)
+//
+//            self.tableView.deleteRows(at: [indexPath], with: .fade)
             completionHeadler(true)
         }
         deleteAction.image = UIImage(named: "delete")
