@@ -9,10 +9,17 @@
 import UIKit
 import CoreData
 
-class TableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class TableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
     var gyms: [gymMO] = []
+    
+    var searchResults: [gymMO] = []
+
     var fetchResultController: NSFetchedResultsController<gymMO>!
+    
+    var searchController: UISearchController!
+    
+    
     
     @IBAction func unwindToHome(segue:UIStoryboardSegue){
         dismiss(animated: true, completion: nil)
@@ -25,10 +32,11 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.backgroundColor = UIColor(red: 0, green: 100, blue: 241)
+   //     navigationController?.navigationBar.backgroundColor = UIColor(red: 0, green: 100, blue: 241)
         
         tableView.backgroundView = emptyGymView
         tableView.backgroundView?.isHidden = true
+        
         
         if let customFont = UIFont(name: "Rubik-Medium", size: 10.0) {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 210.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont]
@@ -56,7 +64,19 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
                     print("error with fetch", error)
             }
         }
-
+        
+        searchController = UISearchController(searchResultsController: nil)
+//        self.navigationItem.searchController = searchController
+        
+        searchController.searchResultsUpdater = self
+    searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search gyms..."
+        searchController.searchBar.barTintColor = .white
+        searchController.searchBar.backgroundImage = UIImage()
+        searchController.searchBar.tintColor = UIColor(red: 231, green: 76, blue: 60)
+        
+        tableView.tableHeaderView = searchController.searchBar
+        
     }
 
     // MARK: - Table view data source
@@ -79,22 +99,32 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         // #warning Incomplete implementation, return the number of rows
-        return gyms.count
+        
+        if searchController.isActive {
+            return searchResults.count
+        } else{
+            return gyms.count
+        }
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellidentifer = "datacell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellidentifer, for: indexPath) as! GymTableViewCell
 
+        // Determine if we get the restaurant from search result or the original array
+        let gum = (searchController.isActive) ? searchResults[indexPath.row] : gyms[indexPath.row]
+        
         // Configure the cell...
 
-        cell.nameLabel?.text = gyms[indexPath.row].name
+        cell.nameLabel.text = gyms[indexPath.row].name
         if let gymImage = gyms[indexPath.row].image {
             cell.thumbnailImageView.image = UIImage(data: gymImage as Data)
         }
-        cell.locationLabel?.text = gyms[indexPath.row].local
-        cell.typeLabel?.text = gyms[indexPath.row].type
+        cell.locationLabel.text = gyms[indexPath.row].local
+        cell.typeLabel.text = gyms[indexPath.row].type
         
         return cell
     }
@@ -103,9 +133,13 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         if segue.identifier == "showDetails" {
             if let indexPath = tableView.indexPathForSelectedRow{
                 let destinationController = segue.destination as! detailViewController
-                destinationController.gymDetails = gyms[indexPath.row]
+                
+//                destinationController.gymDetails = gyms[indexPath.row]
+                
+                destinationController.gymDetails = (searchController.isActive) ? searchResults[indexPath.row] : gyms[indexPath.row]
             }
         }
+        
     }
     
     
@@ -198,6 +232,14 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         return swipeConfig
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if searchController.isActive {
+            return false
+        } else{
+            return true
+        }
+    }
+    
 //    @IBOutlet var emptyGymView: UIImageView!
     @IBOutlet var emptyGymView: UIView!
     
@@ -226,7 +268,28 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
             gyms = fetchedObjects as! [gymMO]
         }
     }
+    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+    }
+    //метод поиска по name в gyms с помощью filter
+    func filterContent(for searchText: String) {
+        searchResults = gyms.filter({
+            (gym) -> Bool in
+            if let name = gym.name, let location = gym.local{
+                let isMatch = name.localizedCaseInsensitiveContains(searchText) || location.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+//            else if let location = gym.local{
+//                let isLocate = location.localizedCaseInsensitiveContains(searchText)
+//            }
+            return false
+        })
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text{
+                filterContent(for: searchText)
+                tableView.reloadData()
+        }
     }
 }

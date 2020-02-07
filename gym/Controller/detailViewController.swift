@@ -21,31 +21,31 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet var ratingImageView: UIImageView!
     
-    @IBAction func rateGym(segue: UIStoryboardSegue){
-        
-        dismiss(animated: true, completion: {
-            
-        if let rating = segue.identifier{
-            self.gymDetails.rating = rating
-            self.headerView.ratingImageView.image = UIImage(named: rating)
-            
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
-                appDelegate.saveContext()
-            }
-            
-            let scaleTransform = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
-            self.headerView.ratingImageView.transform = scaleTransform
-            self.headerView.ratingImageView.alpha = 0
-            
-            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0, animations: {
-                self.headerView.ratingImageView.transform = .identity
-                self.headerView.ratingImageView.alpha = 1
-            }, completion: nil)
-            
-        }
-            })
-        dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func rateGym(segue: UIStoryboardSegue){
+//
+//        dismiss(animated: true, completion: {
+//
+//        if let rating = segue.identifier{
+//            self.gymDetails.rating = rating
+//            self.ratingImageView.image = UIImage(named: rating)
+//
+//            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+//                appDelegate.saveContext()
+//            }
+//
+//            let scaleTransform = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
+//            self.ratingImageView.transform = scaleTransform
+//            self.ratingImageView.alpha = 0
+//
+//            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0, animations: {
+//                self.headerView.ratingImageView.transform = .identity
+//                self.headerView.ratingImageView.alpha = 1
+//            }, completion: nil)
+//
+//        }
+//            })
+//        dismiss(animated: true, completion: nil)
+//    }
   
     
     override func viewDidLoad() {
@@ -63,9 +63,9 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         
         headerView.heartImageView.image = UIImage(named: "heart-tick")
         
-        if let rating = gymDetails.rating{
-            headerView.ratingImageView.image = UIImage(named: rating)
-        }
+//        if let rating = gymDetails.rating{
+//            headerView.ratingImageView.image = UIImage(named: rating)
+//        }
         
         // Do any additional setup after loading the view.
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
