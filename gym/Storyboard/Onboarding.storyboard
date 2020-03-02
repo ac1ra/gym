@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="128" y="26"/>
         </scene>
-        <!--View Controller-->
+        <!--Walkthrough View Controller-->
         <scene sceneID="WXr-x7-E7m">
             <objects>
-                <viewController id="S4B-CW-paf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughViewController" id="S4B-CW-paf" customClass="WalkthroughViewController" customModule="gym" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D5C-0o-t3F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +94,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="amZ-NR-3Zo"/>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="1ab-dB-yHr" id="mLM-ud-2EE"/>
+                        <outlet property="pageControl" destination="ZUV-Mg-N4I" id="svC-X0-PBr"/>
+                        <outlet property="skipButton" destination="y57-y9-ooH" id="yog-n9-DUR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhf-hE-FJH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

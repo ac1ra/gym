@@ -87,6 +87,13 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController {
+        present(walkthroughViewController,animated: true, completion: nil)
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         if gyms.count > 0 {
             tableView.backgroundView?.isHidden = true
