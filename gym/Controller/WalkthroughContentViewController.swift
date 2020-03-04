@@ -64,6 +64,12 @@ class WalkthroughContentViewController: UIPageViewController, UIPageViewControll
             setViewControllers([startingViewController], direction: .forward, animated: true, completion: nil)
         }
     }
+    func fowardPage() {
+        currentIndex += 1
+        if let nextViewController = contentViewController(at: currentIndex) {
+            setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+        }
+    }
     
     @IBOutlet var headingLabel: UILabel! {
         didSet {

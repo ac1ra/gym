@@ -144,6 +144,7 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
 //                destinationController.gymDetails = gyms[indexPath.row]
                 
                 destinationController.gymDetails = (searchController.isActive) ? searchResults[indexPath.row] : gyms[indexPath.row]
+                destinationController.hidesBottomBarWhenPushed = true
             }
         }
         

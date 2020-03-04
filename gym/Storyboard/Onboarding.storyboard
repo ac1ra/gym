@@ -63,6 +63,9 @@
                                                 <state key="normal" title="NEXT">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="nextButtonTappedWithSender:" destination="S4B-CW-paf" eventType="touchUpInside" id="Ka9-wW-rXS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y57-y9-ooH">
                                                 <rect key="frame" x="78" y="127" width="34" height="33"/>
@@ -70,6 +73,9 @@
                                                 <state key="normal" title="Skip">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="skipBttnTappedWithSender:" destination="S4B-CW-paf" eventType="touchUpInside" id="8Ax-tJ-EBG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

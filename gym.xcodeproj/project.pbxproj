@@ -10,6 +10,7 @@
 		A400BD3B23B2172300272B91 /* gymDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400BD3A23B2172300272B91 /* gymDetailHeaderView.swift */; };
 		A400BD3D23B2292700272B91 /* detailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400BD3C23B2292700272B91 /* detailIconTextCell.swift */; };
 		A400BD3F23B231C000272B91 /* gymTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400BD3E23B231C000272B91 /* gymTextCell.swift */; };
+		A405CEE5240FCFD5003EBCDB /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A405CEE4240FCFD5003EBCDB /* About.storyboard */; };
 		A40786A923ED834900D5730F /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40786A823ED834900D5730F /* WalkthroughContentViewController.swift */; };
 		A44F7CC823CEF42200E5599D /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44F7CC723CEF42200E5599D /* mapViewController.swift */; };
 		A47453FF23A269A500B40CA5 /* gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47453FE23A269A400B40CA5 /* gym.swift */; };
@@ -31,12 +32,15 @@
 		A4ED25F423CDE13600A3E0EC /* gymDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED25F323CDE13600A3E0EC /* gymDetailSeparatorCell.swift */; };
 		A4ED25F623CDE1D000A3E0EC /* gymDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED25F523CDE1D000A3E0EC /* gymDetailMapCell.swift */; };
 		A4EDD6A423E039B600666169 /* gymData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4EDD6A223E039B600666169 /* gymData.xcdatamodeld */; };
+		A4FA664F240FD3AC00990860 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FA664E240FD3AC00990860 /* AboutTableViewController.swift */; };
+		A4FA6651240FE9F500990860 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FA6650240FE9F500990860 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A400BD3A23B2172300272B91 /* gymDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymDetailHeaderView.swift; sourceTree = "<group>"; };
 		A400BD3C23B2292700272B91 /* detailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailIconTextCell.swift; sourceTree = "<group>"; };
 		A400BD3E23B231C000272B91 /* gymTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymTextCell.swift; sourceTree = "<group>"; };
+		A405CEE4240FCFD5003EBCDB /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		A40786A823ED834900D5730F /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		A44F7CC723CEF42200E5599D /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 		A47453FE23A269A400B40CA5 /* gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gym.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		A4ED25F323CDE13600A3E0EC /* gymDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymDetailSeparatorCell.swift; sourceTree = "<group>"; };
 		A4ED25F523CDE1D000A3E0EC /* gymDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymDetailMapCell.swift; sourceTree = "<group>"; };
 		A4EDD6A323E039B600666169 /* gymData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = gymData.xcdatamodel; sourceTree = "<group>"; };
+		A4FA664E240FD3AC00990860 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		A4FA6650240FE9F500990860 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 		A498844F239255BE00CD57C6 = {
 			isa = PBXGroup;
 			children = (
+				A405CEE4240FCFD5003EBCDB /* About.storyboard */,
 				A4C7C2C423A3BE3E008CC0D3 /* Resources */,
 				A498845A239255BE00CD57C6 /* gym */,
 				A4988459239255BE00CD57C6 /* Products */,
@@ -138,6 +145,8 @@
 				A476B63323D8621500BAC912 /* newGymController.swift */,
 				A40786A823ED834900D5730F /* WalkthroughContentViewController.swift */,
 				A478A0A5240D35AA0002FBA5 /* WalkthroughViewController.swift */,
+				A4FA664E240FD3AC00990860 /* AboutTableViewController.swift */,
+				A4FA6650240FE9F500990860 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -263,6 +272,7 @@
 			files = (
 				A4988466239255BF00CD57C6 /* LaunchScreen.storyboard in Resources */,
 				A4988463239255BF00CD57C6 /* Assets.xcassets in Resources */,
+				A405CEE5240FCFD5003EBCDB /* About.storyboard in Resources */,
 				A4988461239255BE00CD57C6 /* Main.storyboard in Resources */,
 				A489C49223EB0161002250B7 /* Onboarding.storyboard in Resources */,
 			);
@@ -279,6 +289,7 @@
 				A400BD3D23B2292700272B91 /* detailIconTextCell.swift in Sources */,
 				A476B63223D85D9800BAC912 /* roundedTextField.swift in Sources */,
 				A498845C239255BE00CD57C6 /* AppDelegate.swift in Sources */,
+				A4FA6651240FE9F500990860 /* WebViewController.swift in Sources */,
 				A4ED25F623CDE1D000A3E0EC /* gymDetailMapCell.swift in Sources */,
 				A4EDD6A423E039B600666169 /* gymData.xcdatamodeld in Sources */,
 				A47453FF23A269A500B40CA5 /* gym.swift in Sources */,
@@ -286,6 +297,7 @@
 				A498846E2392564900CD57C6 /* TableViewController.swift in Sources */,
 				A48F8B0423D06AD700969CB6 /* reviewViewController.swift in Sources */,
 				A49884702392AC6E00CD57C6 /* GymTableViewCell.swift in Sources */,
+				A4FA664F240FD3AC00990860 /* AboutTableViewController.swift in Sources */,
 				A400BD3B23B2172300272B91 /* gymDetailHeaderView.swift in Sources */,
 				A44F7CC823CEF42200E5599D /* mapViewController.swift in Sources */,
 				A4ED25EF23CDC6E200A3E0EC /* UINavigationController+Ext.swift in Sources */,
