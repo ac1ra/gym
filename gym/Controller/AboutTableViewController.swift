@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class AboutTableViewController: UITableViewController {
 
@@ -82,11 +83,25 @@ class AboutTableViewController: UITableViewController {
             else if indexPath.row == 1{
                 performSegue(withIdentifier: "showWebView", sender: self)
             }
+        case 1:
+            if let url = URL(string: link){
+                let safariController = SFSafariViewController(url: url)
+                present(safariController,animated: true, completion: nil)
+            }
         default:
             break
         }
         tableView.deselectRow(at: indexPath, animated: false)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWebView"{
+            if let destinationController = segue.destination as? WebViewController,
+                let indexPath = tableView.indexPathForSelectedRow{
+                destinationController.targetURL = sectionContent[indexPath.section][indexPath.row].link
+            }
+        }
+    }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -42,7 +42,9 @@
 		A400BD3E23B231C000272B91 /* gymTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gymTextCell.swift; sourceTree = "<group>"; };
 		A405CEE4240FCFD5003EBCDB /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		A40786A823ED834900D5730F /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
+		A44F009024190B1100C30083 /* gym.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gym.entitlements; sourceTree = "<group>"; };
 		A44F7CC723CEF42200E5599D /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
+		A46A66ED241139A500920CAA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A47453FE23A269A400B40CA5 /* gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gym.swift; sourceTree = "<group>"; };
 		A476B63123D85D9800BAC912 /* roundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedTextField.swift; sourceTree = "<group>"; };
 		A476B63323D8621500BAC912 /* newGymController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGymController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		A498845A239255BE00CD57C6 /* gym */ = {
 			isa = PBXGroup;
 			children = (
+				A44F009024190B1100C30083 /* gym.entitlements */,
 				A4A8783E23CC9DF700078880 /* Extensions */,
 				A498845B239255BE00CD57C6 /* AppDelegate.swift */,
 				A4C7C2C023A3B7DB008CC0D3 /* Controller */,
@@ -202,6 +205,7 @@
 		A4ED25F023CDD9C500A3E0EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A46A66ED241139A500920CAA /* CloudKit.framework */,
 				A4ED25F123CDD9C500A3E0EC /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -451,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = gym/gym.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 967FZ6S3P5;
 				INFOPLIST_FILE = gym/Info.plist;
@@ -469,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = gym/gym.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 967FZ6S3P5;
 				INFOPLIST_FILE = gym/Info.plist;

@@ -46,10 +46,26 @@ class WalkthroughViewController: UIViewController {
         }
         updateUI()
     }
-    
+    @IBAction func pushNotification(_ sender: UIButton) {
+        prepareNotification()
+        
+    }
     @IBOutlet var skipButton:UIButton!
     @IBAction func skipBttnTapped(sender:UIButton){
         dismiss(animated: true, completion: nil)
+    }
+    func prepareNotification(){
+        //create user notification
+        let content = UNMutableNotificationContent()
+        content.title = "Try new food today"
+        content.body = "I recommend you to check out"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let request = UNNotificationRequest(identifier: "gym.gymSuggestion", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
     }
     func updateUI() {
         if let index = walkthroughPageViewController?.currentIndex {
